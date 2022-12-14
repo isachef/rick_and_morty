@@ -19,6 +19,7 @@ class _LocationScreenState extends State<LocationScreen> {
   late LocationBloc _locationBloc;
   late List<LocationModel> locationModelList;
   int? locationListLength;
+  ScrollController scrollController=ScrollController();
 
   @override
   void initState() {
@@ -43,7 +44,7 @@ class _LocationScreenState extends State<LocationScreen> {
                   title: 'найти локацию',
                   onSubmitted: (value) {
                     _locationBloc.add(GetFilterEvent(value));
-                  },
+                  }, onChange: (String val) {  },
                 ),
                 Expanded(
                   child: BlocConsumer<LocationBloc, LocationState>(
@@ -84,6 +85,7 @@ class _LocationScreenState extends State<LocationScreen> {
                                   ),
                                   Expanded(
                                     child: ListView.builder(
+                                      controller:scrollController ,
                                       itemCount: locationModelList.length,
                                       itemBuilder:
                                           (BuildContext context, index) {

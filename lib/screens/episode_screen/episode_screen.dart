@@ -33,7 +33,7 @@ class _EpisodeScreenState extends State<EpisodeScreen>
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: CustomTextField(
-                    title: 'find the episode', onSubmitted: (val) {}),
+                    title: 'find the episode', onSubmitted: (val) {}, onChange: (String val) {  },),
               ),
               TabBar(
                 labelStyle: const TextStyle(color: Colors.black),

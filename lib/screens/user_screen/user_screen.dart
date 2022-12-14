@@ -45,6 +45,9 @@ class _UserScreenState extends State<UserScreen> {
                   onSubmitted: (value) {
                     userBloc.add(GetFilterUsersEvent(value));
                   },
+                  onChange: (value){
+                    userBloc.add(GetFilterUsersEvent(value));
+                  },
                 ),
                 Expanded(
                   child: BlocConsumer<UserBloc, UserState>(

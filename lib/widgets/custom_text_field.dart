@@ -2,12 +2,15 @@ import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
   final String title;
-  final Function(String val) onSubmitted;
+  final Function(String val)? onSubmitted;
+  final Function(String val) onChange;
+
 
   const CustomTextField({
     Key? key,
     required this.title,
-    required this.onSubmitted,
+    required this.onChange,
+    this.onSubmitted,
   }) : super(key: key);
 
   @override
@@ -23,19 +26,20 @@ class CustomTextField extends StatelessWidget {
       child: TextField(
         textAlign: TextAlign.start,
         onSubmitted: onSubmitted,
+        onChanged: onChange,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(vertical: 15),
+          contentPadding: const EdgeInsets.symmetric(vertical: 15),
           border: OutlineInputBorder(borderSide: BorderSide.none),
-          prefixIcon: Icon(
+          prefixIcon: const Icon(
             Icons.search,
             color: Colors.grey,
           ),
           hintText: title,
-          suffixIcon: Container(
+          suffixIcon: SizedBox(
             width: 50,
             child: Row(
               children: [
-                VerticalDivider(
+                const VerticalDivider(
                   width: 2,
                   thickness: 1,
                   indent: 13,
@@ -43,9 +47,9 @@ class CustomTextField extends StatelessWidget {
                   color: Colors.grey,
                 ),
                 IconButton(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.filter_list_alt,
                     color: Colors.grey,
                   ),

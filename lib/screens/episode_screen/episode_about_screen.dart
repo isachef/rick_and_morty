@@ -143,7 +143,7 @@ class _EpisodeAboutScreenState extends State<EpisodeAboutScreen> {
                                         ),
                                       ),
                                       SizedBox(width: 18.w),
-                                      Flexible(
+                                      Expanded(
                                         child: Column(
                                           mainAxisSize: MainAxisSize.min,
                                           mainAxisAlignment:

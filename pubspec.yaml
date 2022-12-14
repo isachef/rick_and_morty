@@ -37,6 +37,16 @@ dependencies:
   dio: ^4.0.6
   flutter_bloc: ^8.1.1
   flutter_screenutil: ^5.5.4
+  flutter_launcher_icons: ^0.11.0
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logoRick.png"
+  adaptive_icon_background: "#11211f"
+  min_sdk_android: 21
+  adaptive_icon_foreground: "assets/icons/logoRick.png"
+
 
 dev_dependencies:
   flutter_test:

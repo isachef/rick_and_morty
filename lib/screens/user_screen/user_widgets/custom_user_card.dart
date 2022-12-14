@@ -55,12 +55,14 @@ class CustomUserCard extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Text(
-                    '$species, $gender',
-                    style: TextStyle(
-                        color: Color(0xff828282),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 14.sp),
+                  Flexible(
+                    child: Text(
+                      '$species, $gender',
+                      style: TextStyle(
+                          color: Color(0xff828282),
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14.sp),
+                    ),
                   ),
                 ],
               ),
