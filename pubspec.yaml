@@ -45,7 +45,7 @@ flutter_icons:
   image_path: "assets/icons/logoRick.png"
   adaptive_icon_background: "#11211f"
   min_sdk_android: 21
-  adaptive_icon_foreground: "assets/icons/logoRick.png"
+  adaptive_icon_foreground: "assets/img/real_logo.png"
 
 
 dev_dependencies:
