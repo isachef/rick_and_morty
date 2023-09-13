@@ -5,6 +5,7 @@ import 'package:rick_and_morty/screens/user_screen/user_about_screen.dart';
 import 'package:rick_and_morty/screens/user_screen/user_widgets/custom_user_card.dart';
 import 'package:rick_and_morty/widgets/custom_text_field.dart';
 import 'package:rick_and_morty/widgets/loading_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import '../../models/user_model.dart';
 import 'bloc/user_bloc.dart';
@@ -20,11 +21,13 @@ class _UserScreenState extends State<UserScreen> {
   late List<UserModel> usermodelList;
   late UserBloc userBloc;
   ValueNotifier _isGrid = ValueNotifier<bool>(true);
+  late var localization;
 
   @override
   void initState() {
     userBloc = UserBloc();
     userBloc.add(GetUsersEvent());
+    localization== AppLocalizations.of(context);
 
     super.initState();
   }
@@ -41,7 +44,7 @@ class _UserScreenState extends State<UserScreen> {
             child: Column(
               children: [
                 CustomTextField(
-                  title: 'найти персонажа',
+                  title: localization.find_person,
                   onSubmitted: (value) {
                     userBloc.add(GetFilterUsersEvent(value));
                   },

@@ -1,8 +1,4 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:rick_and_morty/function/functions.dart';
@@ -44,7 +40,6 @@ class _UserAboutScreenState extends State<UserAboutScreen> {
       listener: (context, state) {
         if (state is UserFetchedState) {
           _userModel = state.userModel;
-          print(_userModel.location!.url!.length);
         }
         if (state is UserErrorState) {
           ScaffoldMessenger.of(context).showSnackBar(
